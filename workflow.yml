@@ -1,0 +1,24 @@
+name: Deploy on Self-Hosted Runner
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Run a Script
+        run: echo "Hello from self-hosted GitHub Actions Runner!"
+
+      - name: List Files
+        run: ls -la
+
+      - name: Deploy Application
+        run: |
+          echo "Deploying application..."
+          # Add your deployment commands here
